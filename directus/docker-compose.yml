@@ -1,0 +1,17 @@
+services:
+    directus:
+        image: directus/directus:latest
+        ports:
+            - 8055:8055
+            - 5000:5000
+        volumes:
+            - ./database:/directus/database
+            - ./uploads:/directus/uploads
+            - ./extensions:/directus/extensions
+        environment:
+            SECRET: "pankajjayesh"
+            ADMIN_EMAIL: "pankaj@gmail.com"
+            ADMIN_PASSWORD: "1234"
+            DB_CLIENT: "sqlite3"
+            DB_FILENAME: "/directus/database/pillai.db"
+            WEBSOCKETS_ENABLED: "true"
